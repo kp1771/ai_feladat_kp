@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Őszi szünet tervei - Kérdőív</title>
+    <link rel="stylesheet" href="urlap.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="site-header">
+        <div class="logo-placeholder" aria-label="Logó helye">Logó</div>
+
+        <nav aria-label="Fő navigáció">
+          <ul class="menu">
+            <li><a href="index.html">Főoldal</a></li>
+            <li><a href="urlap.html" class="active">Űrlap</a></li>
+            <li><a href="#harmadik">Menüpont 3</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <header class="hero" id="elso">
+          <h1>Őszi szünet tervei</h1>
+          <p>
+            Kérlek, töltsd ki az alábbi rövid kérdőívet, hogy megtudjuk, mik a terveid az őszi szünetre!
+          </p>
+        </header>
+
+        <section class="content-layout" id="masodik">
+          <article class="main-content">
+
+            <form action="/action_page.php" class="survey-form">
+              <h2>Kérdőív az őszi szünetről</h2>
+
+              <div class="form-group">
+                <label for="fname">Keresztnév:</label>
+                <input type="text" id="fname" name="fname" placeholder="pl. Anna" required />
+              </div>
+
+              <div class="form-group">
+                <label for="email">E-mail cím:</label>
+                <input type="email" id="email" name="email" placeholder="pelda@email.hu" required />
+              </div>
+
+              <div class="form-group">
+                <label for="birthday">Mettől meddig tart számodra a szünet? (Kezdő dátum)</label>
+                <input type="date" id="birthday" name="szunet_kezdete" />
+              </div>
+
+
+              <div class="form-group">
+                <label>Mi lesz a fő programod az őszi szünetben? (Válassz egyet)</label>
+                <div class="radio-group">
+                  <div>
+                    <input type="radio" id="utazas" name="fo_program" value="Utazas" />
+                    <label for="utazas">Utazás / Kirándulás</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="pihenes" name="fo_program" value="Pihenes" />
+                    <label for="pihenes">Otthoni pihenés és feltöltődés</label>
+                  </div>
+                  <div>
+                    <input type="radio" id="tanulas" name="fo_program" value="Tanulas" />
+                    <label for="tanulas">Tanulás / Projektműködés</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Milyen tevékenységeket tervezel? (Többet is választhatsz)</label>
+                <div class="checkbox-group">
+                  <div>
+                    <input type="checkbox" id="activity1" name="tevekenyseg_sport" value="Sport" />
+                    <label for="activity1">Sport / Mozgás a friss levegőn</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" id="activity2" name="tevekenyseg_konyv" value="Olvasas" />
+                    <label for="activity2">Olvasás / Filmek nézése</label>
+                  </div>
+                  <div>
+                    <input type="checkbox" id="activity3" name="tevekenyseg_csalad" value="Csalad" />
+                    <label for="activity3">Találkozás barátokkal, családdal</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="vol">Mennyire várod az őszi szünetet? (0 - 50 skálán):</label>
+                <input type="range" id="vol" name="varakozas_foka" min="0" max="50" value="25" />
+
+              </div>
+
+              <div class="form-group">
+                <label for="favcolor">Mi a kedvenc őszi színed?</label>
+                <input type="color" id="favcolor" name="favcolor" value="#d97706" />
+              </div>
+
+              <div class="form-actions">
+                <input type="submit" value="Kérdőív elküldése" />
+              </div>
+            </form>
+          </article>
+
+          <aside id="harmadik">
+            <h2>Tudtad-e?</h2>
+
+            <section class="aside-box">
+              <h3>Pihenés</h3>
+              <p>Az őszi szünet segít kipihenni az évkezdés fáradalmait és új energiával feltöltődni.</p>
+            </section>
+
+            <section class="aside-box">
+              <h3>Természet</h3>
+              <p>Az őszi erdők színpompája kiváló helyszín a szabadtéri sétákhoz és kirándulásokhoz.</p>
+            </section>
+
+            <section class="aside-box">
+              <h3>Kreativitás</h3>
+              <p>A hűvösebb napok tökéletesek az otthoni kreatív projektekhez és olvasáshoz.</p>
+            </section>
+          </aside>
+        </section>
+      </main>
+
+      <footer>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Quisque vitae libero vel lorem tincidunt ullamcorper.</p>
+      </footer>
+    </div>
+  </body>
+</html>
