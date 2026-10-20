@@ -1,0 +1,279 @@
+/* ==========================================
+   1. CSS Változók (:root) és Alapbeállítások
+   ========================================== */
+:root {
+  --primary-color: #2563eb;
+  --primary-hover: #1d4ed8;
+  --text-main: #1f2937;
+  --text-muted: #4b5563;
+  --bg-outer: #f1f5f9;       /* A képernyő háttérszíne a margók mellett */
+  --bg-inner: #ffffff;       /* Az oldal belső, konténer háttérszíne */
+  --border-color: #e2e8f0;
+  --radius: 8px;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text-main);
+  background-color: var(--bg-outer);
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* ==========================================
+   2. Középre zárt fő keret (Container)
+   ========================================== */
+.container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: var(--bg-inner);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ==========================================
+   3. Navigáció (Nav)
+   ========================================== */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 2.5rem;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-inner);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo-placeholder {
+  width: 120px;
+  height: 40px;
+  background-color: var(--border-color);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.menu {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.menu a {
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.menu a:hover {
+  color: var(--primary-color);
+}
+
+/* ==========================================
+   4. Fejléc (Hero Header)
+   ========================================== */
+.hero {
+  padding: 3.5rem 2.5rem;
+  border-bottom: 1px solid var(--border-color);
+  text-align: left;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-main);
+}
+
+.hero p {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+  max-width: 750px;
+}
+
+/* ==========================================
+   5. Tartalmi Elrendezés (Article 70% + Aside 30%)
+   ========================================== */
+.content-layout {
+  display: flex;
+  gap: 2.5rem;
+  padding: 3rem 2.5rem;
+}
+
+.main-content {
+  flex: 7; /* ~70% */
+}
+
+aside {
+  flex: 3; /* ~30% */
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.main-content > h2,
+aside > h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+/* ==========================================
+   6. Article Kártyák (2 oszlop x 3 sor)
+   ========================================== */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.card {
+  flex: 0 0 calc(50% - 0.625rem); /* Pontosan 2 oszlop a gap-et figyelembe véve */
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--bg-inner);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+}
+
+.image-placeholder {
+  flex: 0 0 80px;
+  height: 80px;
+  background-color: var(--border-color);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  text-align: left;
+}
+
+.card-content h3 {
+  font-size: 1.05rem;
+  color: var(--text-main);
+}
+
+.card-content p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: var(--primary-color);
+  padding: 0.35rem 0.85rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--primary-hover);
+}
+
+/* ==========================================
+   7. Aside Kártyák (1 oszlop)
+   ========================================== */
+.aside-box {
+  background-color: var(--bg-inner);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+  text-align: left;
+}
+
+.aside-box h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+  color: var(--text-main);
+}
+
+.aside-box p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================
+   8. Lábléc (Footer)
+   ========================================== */
+footer {
+  margin-top: auto;
+  padding: 2rem 2.5rem;
+  border-top: 1px solid var(--border-color);
+  text-align: left;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+/* ==========================================
+   9. Reszponzív nézet (Mobil / Tablet)
+   ========================================== */
+@media (max-width: 768px) {
+  .content-layout {
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+  }
+
+  .site-header,
+  .hero,
+  footer {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .card {
+    flex: 0 0 100%;
+  }
+
+  .menu {
+    gap: 1rem;
+  }
+}
